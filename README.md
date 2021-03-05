@@ -18,9 +18,9 @@ Developed by Alexis Arando, Jacky Tong, James GIlley, Soumya Singh, Vicctor Tran
 # To-Do list for Team
 
 Jacky - Scrum manager, organization
-Soumya - Front End
+Soumya - Back End/ Any
 Alexis - Front/Back end
-Victor - Backend
+Victor - Front End emphasis (server.js)
 James - Any, Backend emphasis
 
 # Technologies
