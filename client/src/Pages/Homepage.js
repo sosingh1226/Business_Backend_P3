@@ -1,16 +1,16 @@
-// import React, { useContext, useEffect } from "react";
-// import { useHistory } from "react-router-dom";
-// import UserContext from "../Context/UserContext";
+import React, { useContext, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import UserContext from "../Context/UserContext";
 
-// const Home = () => {
-//   const { userData } = useContext(UserContext);
-//   const history = useHistory();
+const Home = () => {
+	//   const { userData } = useContext(UserContext);
+	//   const history = useHistory();
 
-//   useEffect(() => {
-//     if (!userData.user) history.push("/login");
-//   }, [userData.user, history]);
+	//   useEffect(() => {
+	//     if (!userData.user) history.push("/login");
+	//   }, [userData.user, history]);
 
-//   return <h1>Home</h1>;
-// };
+	return <h1>Hello from Homepage</h1>;
+};
 
-// export default Home;
+export default Home;
