@@ -20,7 +20,7 @@ function App() {
 			localStorage.setItem("auth-token", "");
 			token = "";
 		} else {
-			const userRes = await axios.get("/users/", {
+			const userRes = await axios.get("/", {
 				headers: { "x-auth-token": token },
 			});
 

@@ -19,7 +19,8 @@ const Login = () => {
 			const loginRes = await Axios.post("/login", {
 				email: form.email,
 				password: form.password,
-			});
+            });
+            console.log(loginRes)
 
 			setUserData({
 				token: loginRes.data.token,

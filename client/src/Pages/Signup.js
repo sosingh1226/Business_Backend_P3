@@ -15,8 +15,8 @@ const Signup = () => {
 	const submit = async (e) => {
 		e.preventDefault();
 		try {
-			await Axios.post("/users/register", form);
-			const loginRes = await Axios.post("/users/login", {
+			await Axios.post("/register", form);
+			const loginRes = await Axios.post("/login", {
 				email: form.email,
 				password: form.password,
 			});

@@ -79,10 +79,21 @@ module.exports = {
 					id: user._id,
 					displayName: user.displayName,
 				},
-            });
+			});
+		} catch (err) {
+			res.status(500).json({ msg: err });
+		}
+	},
+	getUser: async (req, res) => {
+		try {
+            const user = await User.findById(req.user);
             
-
-            
-		} catch (err) {}
+            res.json({
+                displayName: user.displayName,
+                id: user._id
+            })
+		} catch (err) {
+            res.send(err.response)
+        }
 	},
 };
