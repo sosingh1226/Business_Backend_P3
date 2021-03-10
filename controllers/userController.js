@@ -86,14 +86,14 @@ module.exports = {
 	},
 	getUser: async (req, res) => {
 		try {
-            const user = await User.findById(req.user);
-            
-            res.json({
-                displayName: user.displayName,
-                id: user._id
-            })
+			const user = await User.findById(req.user);
+
+			res.json({
+				displayName: user.displayName,
+				id: user._id,
+			});
 		} catch (err) {
-            res.send(err.response)
-        }
+			res.send(err.response);
+		}
 	},
 };

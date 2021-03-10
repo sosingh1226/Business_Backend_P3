@@ -2,7 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../Context/UserContext";
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
-import icon from '../Img/774.png';
+import { Link } from "react-router-dom";
+import icon from "../Img/774.png";
 
 const Login = () => {
 	const { userData, setUserData } = useContext(UserContext);
@@ -20,8 +21,8 @@ const Login = () => {
 			const loginRes = await Axios.post("/login", {
 				email: form.email,
 				password: form.password,
-            });
-            console.log(loginRes)
+			});
+			console.log(loginRes);
 
 			setUserData({
 				token: loginRes.data.token,
@@ -41,14 +42,20 @@ const Login = () => {
 
 	return (
 		<div>
-
-			<form id ="form" onSubmit={submit}>
-				<label htmlFor="email">Email</label>
-				<input type="text" name="email" onChange={onChange} />
-				<label htmlFor="password">Password</label>
-				<input type="text" name="password" onChange={onChange} />
-				<input type="submit" value="Submit" />
-			</form>
+			<span class="top">EMPLOYEE MANAGEMENT PORTAL</span>
+			<p></p>
+			<span>
+				Welcome! Please sign in or signup to view contents
+				<form id="form" onSubmit={submit}>
+					<label htmlFor="email">Email</label>
+					<input type="text" name="email" onChange={onChange} />
+					<label htmlFor="password">Password</label>
+					<input type="text" name="password" onChange={onChange} />
+					<input type="submit" value="Submit" />
+				</form>
+				<p></p>
+				Don't have an account? <Link to="/Signup"> Click here to Sign Up!</Link>
+			</span>
 		</div>
 	);
 };
