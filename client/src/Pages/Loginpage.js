@@ -22,7 +22,6 @@ const Login = () => {
 				email: form.email,
 				password: form.password,
 			});
-			console.log(loginRes.data.user.role);
 
 			setUserData({
 				token: loginRes.data.token,
@@ -31,10 +30,11 @@ const Login = () => {
 			});
 
 			localStorage.setItem("auth-token", loginRes.data.token);
-			if (loginRes.data.user.role === "Manager") {
+			const userRole = loginRes.data.user.role;
+			if (userRole === "Manager") {
 				history.push("/Mmain");
 			} else {
-				if (loginRes.data.user.role === "Employee") {
+				if (userRole === "Employee") {
 					history.push("/Emain");
 				}
 			}

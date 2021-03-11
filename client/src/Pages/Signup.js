@@ -3,7 +3,6 @@ import UserContext from "../Context/UserContext";
 import { useHistory, Link } from "react-router-dom";
 import Axios from "axios";
 
-
 const Signup = () => {
 	const { setUserData } = useContext(UserContext);
 	const [form, setForm] = useState();
@@ -21,14 +20,21 @@ const Signup = () => {
 				email: form.email,
 				password: form.password,
 			});
-
+			console.log(loginRes);
 			setUserData({
 				token: loginRes.data.token,
 				user: loginRes.data.user,
 			});
 
 			localStorage.setItem("auth-token", loginRes.data.token);
-			history.push("/");
+			const userRole = loginRes.data.user.role;
+			if (userRole === "Manager") {
+				history.push("/Mmain");
+			} else {
+				if (userRole === "Employee") {
+					history.push("/Emain");
+				}
+			}
 		} catch (err) {
 			console.log("problem", err);
 		}
@@ -69,11 +75,10 @@ const Signup = () => {
 					<br />
 					<label>Select Job Title:</label>{" "}
 					<select name="role" onChange={onChange} placeholder="Job Title">
-						<option disabled >Select</option>
+						<option disabled>Select</option>
 						<option value="Employee">Employee</option>
 						<option value="Manager">Manager</option>
 					</select>
-			
 					<br></br>
 					<input type="submit"></input>
 				</form>
