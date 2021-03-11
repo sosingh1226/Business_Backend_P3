@@ -3,6 +3,7 @@ import UserContext from "../Context/UserContext";
 import { useHistory, Link } from "react-router-dom";
 import Axios from "axios";
 
+
 const Signup = () => {
 	const { setUserData } = useContext(UserContext);
 	const [form, setForm] = useState();
@@ -45,29 +46,35 @@ const Signup = () => {
 						type="text"
 						name="email"
 						placeholder="email"
-					></input>
-
-					<input
-						onChange={onChange}
-						type="text"
-						name="password"
-						placeholder="password"
-					></input>
-
-					<input
-						onChange={onChange}
-						type="text"
-						name="passwordCheck"
-						placeholder="passwordCheck"
-					></input>
-
+					></input>{" "}
 					<input
 						onChange={onChange}
 						type="text"
 						name="displayName"
 						placeholder="Display name"
 					></input>
-
+					<br></br>
+					<input
+						onChange={onChange}
+						type="text"
+						name="password"
+						placeholder="password"
+					></input>{" "}
+					<input
+						onChange={onChange}
+						type="text"
+						name="passwordCheck"
+						placeholder="passwordCheck"
+					></input>
+					<br />
+					<label>Select Job Title:</label>{" "}
+					<select name="role" onChange={onChange} placeholder="Job Title">
+						<option disabled >Select</option>
+						<option value="Employee">Employee</option>
+						<option value="Manager">Manager</option>
+					</select>
+			
+					<br></br>
 					<input type="submit"></input>
 				</form>
 				Already have an account? <Link to="/login"> Click here to Login!</Link>

@@ -1,14 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-	BrowserRouter,
-	Switch,
-	Route,
-	Link,
-	useHistory,
-	Redirect,
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Homepage from "./Pages/Homepage";
 import Login from "./Pages/Loginpage";
 import Signup from "./Pages/Signup";
@@ -25,8 +18,6 @@ function App() {
 		user: undefined,
 		token: undefined,
 	});
-	const history = useHistory();
-
 	const checkLoggedIn = async () => {
 		let token = localStorage.getItem("auth-token");
 
@@ -61,16 +52,9 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				{!userData.user ? (
-					<>
-						<Link to="/signup">Signup</Link>
-						<Link to="/login">Login</Link>
-					</>
-				) : (
-					<Link to="/login" onClick={logout}>
-						Logout
-					</Link>
-				)}
+				<Link to="/login" onClick={logout}>
+					Logout
+				</Link>
 
 				<UserContext.Provider value={{ userData, setUserData }}>
 					<Switch>

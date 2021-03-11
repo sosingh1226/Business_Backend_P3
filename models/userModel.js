@@ -9,6 +9,11 @@ const userSchema = new mongoose.Schema({
 	},
 	password: { type: String, required: true, minLength: 8 },
 	displayName: { type: String, required: true },
+	role: {
+		type: String,
+		enum: ["Manager", "Employee"],
+		default: 'Employee'
+	},
 });
 
 module.exports = User = mongoose.model("user", userSchema);

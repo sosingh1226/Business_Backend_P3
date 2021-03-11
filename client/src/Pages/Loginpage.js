@@ -22,22 +22,29 @@ const Login = () => {
 				email: form.email,
 				password: form.password,
 			});
-			console.log(loginRes);
+			console.log(loginRes.data.user.role);
 
 			setUserData({
 				token: loginRes.data.token,
 				user: loginRes.data.user,
+				role: loginRes.data.user.role,
 			});
 
 			localStorage.setItem("auth-token", loginRes.data.token);
-			history.push("/");
+			if (loginRes.data.user.role === "Manager") {
+				history.push("/Mmain");
+			} else {
+				if (loginRes.data.user.role === "Employee") {
+					history.push("/Emain");
+				}
+			}
 		} catch (err) {
 			console.log("problem", err);
 		}
 	};
 
 	useEffect(() => {
-		if (userData.user) history.push("/");
+		if (userData.userData) history.push("/");
 	}, [userData.user, history]);
 
 	return (
@@ -49,9 +56,11 @@ const Login = () => {
 				<form id="form" onSubmit={submit}>
 					<label htmlFor="email">Email</label>
 					<input type="text" name="email" onChange={onChange} />
+					<br />
 					<label htmlFor="password">Password</label>
 					<input type="text" name="password" onChange={onChange} />
-					<input type="submit" value="Submit" />
+					<br />
+					<input type="submit" value="Login" />
 				</form>
 				<p></p>
 				Don't have an account? <Link to="/Signup"> Click here to Sign Up!</Link>

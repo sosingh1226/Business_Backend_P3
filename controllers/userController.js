@@ -6,10 +6,10 @@ const jwt = require("jsonwebtoken");
 module.exports = {
 	register: async (req, res) => {
 		try {
-			const { email, password, passwordCheck, displayName } = req.body;
+			const { email, password, passwordCheck, displayName, role } = req.body;
 
 			// validation (need one conditional for email validation)
-			if (!email || !password || !passwordCheck || !displayName)
+			if (!email || !password || !passwordCheck || !displayName || !role)
 				return res
 					.status(400)
 					.json({ msg: "Not all fields have been entered!" });
@@ -36,6 +36,7 @@ module.exports = {
 				email,
 				password: hashPw,
 				displayName,
+				role
 			});
 
 			const saveUser = await createNewUser.save();
@@ -68,6 +69,7 @@ module.exports = {
 			const token = jwt.sign(
 				{
 					id: user._id,
+					role: user.role
 				},
 				process.env.JWT_SECRET,
 				{ expiresIn: "2h" }
@@ -78,6 +80,7 @@ module.exports = {
 				user: {
 					id: user._id,
 					displayName: user.displayName,
+					role: user.role
 				},
 			});
 		} catch (err) {
@@ -87,10 +90,12 @@ module.exports = {
 	getUser: async (req, res) => {
 		try {
 			const user = await User.findById(req.user);
+	
 
 			res.json({
 				displayName: user.displayName,
 				id: user._id,
+				role: user.role
 			});
 		} catch (err) {
 			res.send(err.response);
