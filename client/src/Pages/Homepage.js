@@ -1,29 +1,39 @@
-import React, { useContext, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {useHistory} from 'react-router-dom'
+import Mmain from "../Pages/Mmain";
+import Emain from "../Pages/Emain";
 import UserContext from "../Context/UserContext";
-import Login from './Loginpage';
-import {Link} from "react-router-dom";
 
 const Home = () => {
-	const { userData } = useContext(UserContext);
-	const history = useHistory();
 
-	useEffect(() => {
-		if (!userData.user) history.push("/login");
-	}, [userData.user, history]);
+	// const [userData, setUserData] = useState({
+	// 	user: undefined,
+	// 	token: undefined,
+	// 	role: undefined
+	// });
+	// console.log(userData.role)
 
-	return <div>
+	// const history = useHistory()
 
-<span class="top">EMPLOYEE MANAGEMENT PORTAL</span> 
-<p></p>
-		<span>Welcome! Please sign in or signup to view contents
-<Login />
-<p></p>
-Don't have an account? <Link to="/Signup"> Click here to Sign Up!</Link>
+	// const adminLogin = () => {
+	// 	setUserData({
+	// 		role: userData.role
+	// 	})
+	// 	if (role === "Manager") {
+	// 		history.push({Mmain})
+	// 	} else {
+	// 	if (role === "Employee") {
+	// 		history.push({Emain})
+	// 	}
+	// }
 
-</span>
-	</div>
-	;
+	// useEffect(() => {
+	// 	adminLogin();
+	// }, []);
+
+	return (
+		<div></div>
+	)
 };
 
-export default Home;
+export default Home
