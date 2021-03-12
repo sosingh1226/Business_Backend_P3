@@ -3,7 +3,7 @@ import UserContext from "../Context/UserContext";
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import { Link } from "react-router-dom";
-import icon from "../Img/774.png";
+
 
 const Login = () => {
 	const { userData, setUserData } = useContext(UserContext);

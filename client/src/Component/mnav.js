@@ -6,8 +6,9 @@ import icon from "../Img/774.png";
 function Mnav() {
 	return (
 		<header>
-			<span class="coname"> Company Name</span>
+			
 			<span class="top">EMPLOYEE MANAGEMENT PORTAL</span>{" "}
+			<span class="coname"> Company Name</span>
 			<img src={icon} alt="icon"></img>
 			<nav class="menubar">
 				<ul>
@@ -26,6 +27,7 @@ function Mnav() {
 					<li>
 						<Link to="/Page04">ANNOUCEMENTS</Link>
 					</li>
+					<li><Link to="/Loginpage">LOGOUT</Link></li>
 				</ul>
 				<br></br>
 				<span class="team">

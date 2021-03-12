@@ -51,27 +51,23 @@ const Signup = () => {
 						onChange={onChange}
 						type="text"
 						name="email"
-						placeholder="email"
-					></input>{" "}
+						placeholder="email"></input>{" "}
 					<input
 						onChange={onChange}
 						type="text"
 						name="displayName"
-						placeholder="Display name"
-					></input>
+						placeholder="Display name"></input>
 					<br></br>
 					<input
 						onChange={onChange}
 						type="text"
 						name="password"
-						placeholder="password"
-					></input>{" "}
+						placeholder="password"></input>{" "}
 					<input
 						onChange={onChange}
 						type="text"
 						name="passwordCheck"
-						placeholder="passwordCheck"
-					></input>
+						placeholder="passwordCheck"></input>
 					<br />
 					<label>Select Job Title:</label>{" "}
 					<select name="role" onChange={onChange} placeholder="Job Title">
