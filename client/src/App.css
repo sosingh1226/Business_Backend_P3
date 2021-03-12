@@ -1,0 +1,113 @@
+/* ALEXIS EDITS */
+body { 
+  background: rgb(240, 241, 243); 
+  color: rgb(107, 101, 101);  
+  font-family: 'Abel', sans-serif;
+  padding: 20px;
+  margin: 0; 
+}
+h2, p, ul, li {
+  font-family: 'Abel', sans-serif;
+}
+a:link {
+color: lightsteelblue;
+}
+
+a:visited {
+color: grey;
+}
+
+a:hover {
+color: white;
+}
+h2
+{
+  color: steelblue;
+}
+
+a:active {
+color: lightsteelblue;
+/* }
+.content {
+  background-color: #090d00;
+  padding: 20px;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+.content li {
+  margin-bottom: 10px; */
+}
+.top {
+  background-image: url(./Img/bgimg.png); 
+  background-repeat: repeat-y; 
+  text-shadow: 2px 2px 4px #000000;
+  color: white;
+  font-size: 40px;
+  padding: 20px;
+}
+.coname {
+  /* text-shadow: 2px 2px 4px #000000; */
+  color: steelblue;
+  font-size: 30px;
+  padding: 5px;
+  align-content: center;
+}
+
+#specialtxt {
+color: slategray;
+} 
+
+.menubar{
+  text-align: left;
+}
+
+.menubar ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform: skew(-25deg);
+}
+
+.menubar ul li {
+  background: #fff;
+  float: left;
+  border-right: 1px solid #eee;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+  color: #555;
+  font-weight: bolder;
+  transition: all 0.3s linear;
+}
+  
+.menubar ul li:first-child {
+	border-radius: 7px 0 0 7px;
+}
+  
+.menubar ul li:last-child {
+	border-right: none;
+	border-radius: 0 7px 7px 0;
+}
+  
+.menubar ul li:hover {
+    background: rgb(220, 229, 240);
+    color: #000;
+}
+.menubar ul li a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    font-size: 11px;
+    padding: 1em 2em;
+    transform: skew(25deg);
+}
+.team {
+  font-size: 10px;
+  padding: 0;
+}
+#form {
+  padding:5px;
+}
