@@ -66,7 +66,7 @@ function App() {
 						<Route path="/Profilepage" component={Profile} />
 						<Route path="/Page03" component={Pg03} />
 						<Route path="/Page04" component={Pg04} />
-						<Route path="/" component={Homepage} />
+						<Route path="/" component={Login} />
 					</Switch>
 				</UserContext.Provider>
 			</BrowserRouter>
