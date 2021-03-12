@@ -58,7 +58,9 @@ const Login = () => {
 					<input type="text" name="email" onChange={onChange} />
 					<br />
 					<label htmlFor="password">Password</label>
+					{/* NOTE: Change type to "password" when done testing, below */}
 					<input type="text" name="password" onChange={onChange} />
+					{/* NOTE: Change type to password when done testing, above */}
 					<br />
 					<input type="submit" value="Login" />
 				</form>
