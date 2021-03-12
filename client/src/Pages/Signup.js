@@ -60,6 +60,8 @@ const Signup = () => {
 						placeholder="Display name"
 					></input>
 					<br></br>
+
+					{/* NOTE: Change type to "password" when done testing, below */}
 					<input
 						onChange={onChange}
 						type="text"
@@ -72,10 +74,12 @@ const Signup = () => {
 						name="passwordCheck"
 						placeholder="passwordCheck"
 					></input>
+					{/* NOTE: Change type to password when done testing, above */}
+
 					<br />
 					<label>Select Job Title:</label>{" "}
 					<select name="role" onChange={onChange} placeholder="Job Title">
-						<option disabled>Select</option>
+						<option value="Select">Select</option>
 						<option value="Employee">Employee</option>
 						<option value="Manager">Manager</option>
 					</select>
