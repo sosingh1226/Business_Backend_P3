@@ -1,4 +1,4 @@
-import React, {} from "react";
+import React from "react";
 import Mnav from './../Component/mnav';
 
  
@@ -7,7 +7,7 @@ import Mnav from './../Component/mnav';
       <div>
         <Mnav />
 
-        <h2>Page 04</h2>
+        <h2>ANNOUCEMENTS</h2>
         <p>Content to be decided </p>
     
           
@@ -15,7 +15,7 @@ import Mnav from './../Component/mnav';
            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
             enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
              <p>
-                 <a href=""> To test Links</a>
+                 <a href=""> testing links look</a>
              </p>
         
       </div>

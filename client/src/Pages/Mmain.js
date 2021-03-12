@@ -1,8 +1,5 @@
-import React, {} from "react";
+import React from "react";
 import Mnav from "./../Component/mnav";
-
-// class MMain extends Component {
-// 	render() {
 
 function MMain() {
 		return (
