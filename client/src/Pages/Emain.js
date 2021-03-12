@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import Enav from "./../Component/enav";
+import React from "react";
+import Enav from "../Component/enav";
 
-class EMain extends Component {
-	render() {
+function Emain() {
 		return (
 			<div>
 				<Enav />
@@ -23,9 +22,8 @@ class EMain extends Component {
         <h1>EMPLOYEE PAGE</h1>
 			</div>
 		);
-	}
-}
+		}
 
-export default EMain;
+export default Emain;
 
 // This is the main page that a regular employee will see after logging in

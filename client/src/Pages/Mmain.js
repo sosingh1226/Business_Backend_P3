@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Mnav from "./../Component/mnav";
 
-class MMain extends Component {
-	render() {
+function MMain() {
 		return (
 			<div>
 				<Mnav />
@@ -23,7 +22,6 @@ class MMain extends Component {
 			</div>
 		);
 	}
-}
 
 export default MMain;
 
