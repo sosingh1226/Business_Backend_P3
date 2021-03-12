@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Mnav from './../Component/mnav';
 
  
@@ -7,7 +7,7 @@ import Mnav from './../Component/mnav';
       <div>
         <Mnav />
 
-        <h2>Page 03</h2>
+        <h2>REQUEST TIME OFF</h2>
         <p>Content to be decided </p>
     
           
