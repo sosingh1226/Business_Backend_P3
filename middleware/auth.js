@@ -6,7 +6,7 @@ const auth = (req, res, next) => {
 		const token = req.header("x-auth-token");
 
 		if (!token) {
-			return res.status(400).json({ msg: "No authentication token passed" });
+			return res.status(400).json({ msg: "No token, authorization denied" });
 		}
 
 		const verified = jwt.verify(token, process.env.JWT_SECRET);

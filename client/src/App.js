@@ -5,14 +5,19 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Homepage from "./Pages/Homepage";
 import Login from "./Pages/Loginpage";
 import Signup from "./Pages/Signup";
-import UserContext from "./Context/UserContext"
+import Mmain from "./Pages/Mmain";
+import Emain from "./Pages/Emain";
+import Schedule from "./Pages/Schedulepage";
+import Profile from "./Pages/Profilepage";
+import Pg03 from "./Pages/Page03";
+import Pg04 from "./Pages/Page04";
+import UserContext from "./Context/UserContext";
 
 function App() {
 	const [userData, setUserData] = useState({
 		user: undefined,
 		token: undefined,
 	});
-
 	const checkLoggedIn = async () => {
 		let token = localStorage.getItem("auth-token");
 
@@ -47,26 +52,26 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				{!userData.user ? (
-					<>
-						<Link to="/signup">Signup</Link>
-						<Link to="/login">Login</Link>
-					</>
-				) : (
-					<Link to="/login" onClick={logout}>
-						Logout
-					</Link>
-				)}
+				<Link to="/login" onClick={logout}>
+					Logout
+				</Link>
 
 				<UserContext.Provider value={{ userData, setUserData }}>
 					<Switch>
 						<Route path="/login" component={Login} />
 						<Route path="/signup" component={Signup} />
-						<Route path="/" component={Homepage} />
+						<Route path="/Mmain" component={Mmain} />
+						<Route path="/Emain" component={Emain} />
+						<Route path="/Schedulepage" component={Schedule} />
+						<Route path="/Profilepage" component={Profile} />
+						<Route path="/Page03" component={Pg03} />
+						<Route path="/Page04" component={Pg04} />
+						<Route path="/" component={Login} />
 					</Switch>
 				</UserContext.Provider>
 			</BrowserRouter>
 		</div>
 	);
 }
+
 export default App;
