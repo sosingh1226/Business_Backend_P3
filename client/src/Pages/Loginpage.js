@@ -55,11 +55,11 @@ const Login = () => {
 				Welcome! Please sign in or signup to view contents
 				<form id="form" onSubmit={submit}>
 					<label htmlFor="email">Email</label>
-					<input type="text" name="email" onChange={onChange} />
+					<input type="text" className="loginEmail" name="email" onChange={onChange} />
 					<br />
 					<label htmlFor="password">Password</label>
 					{/* NOTE: Change type to "password" when done testing, below */}
-					<input type="text" name="password" onChange={onChange} />
+					<input type="text" name="password" className="loginPassword" onChange={onChange} />
 					{/* NOTE: Change type to password when done testing, above */}
 					<br />
 					<input type="submit" value="Login" />
