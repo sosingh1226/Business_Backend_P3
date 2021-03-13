@@ -111,3 +111,12 @@ color: slategray;
 #form {
   padding:5px;
 }
+
+@media screen and (max-width:600px){
+  .loginEmail {
+    width:100%
+  }
+  .loginPassword {
+    width:100%
+  }
+}
