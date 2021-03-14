@@ -1,9 +1,7 @@
 const router = require("express").Router();
+const {newPost} = require('../controllers/announceController')
 
-router.get("/", (req, res) => {
-    console.log('hello')
-    res.send('success from routes')
-});
+router.get("/", newPost);
 
 
 
