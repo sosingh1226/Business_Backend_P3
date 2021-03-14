@@ -11,4 +11,16 @@ module.exports = {
 		res.json(savePost);
 	},
 
+	getAllPosts: async (req, res) => {
+		try {
+			const allPosts = await Announce.find({
+				userId: req.user,
+			});
+			console.log(allPosts);
+			res.json(allPosts);
+		} catch (err) {
+			console.log("new error", err);
+			res.send("Can't view all post");
+		}
+	},
 };

@@ -4,6 +4,8 @@ import axios from "axios";
 const AnnounceContainer = () => {
 	const [form, setForm] = useState({ title: "", text: "" });
 
+	const [posts, setPosts] = useState([]);
+
 	const onChange = (e) => {
 		setForm({ ...form, [e.target.name]: e.target.value });
 	};
@@ -22,7 +24,14 @@ const AnnounceContainer = () => {
 			console.log(err);
 		}
 	};
-	
+	useEffect(() => {
+		(async () => {
+			const allPosts = await axios.get("/announce", {
+				headers: { "x-auth-token": localStorage.getItem("auth-token") },
+			});
+			console.log(allPosts);
+		})();
+	}, []);
 
 	return (
 		<div>
@@ -45,6 +54,14 @@ const AnnounceContainer = () => {
 				<button type="submit">Submit</button>
 			</form>
 
+			<div className="announcements">
+				{posts.map((post) => (
+                    <>
+					<p>{post.title}</p>
+                    <p>{post.text}</p>
+                    </>
+				))}
+			</div>
 		</div>
 	);
 };
