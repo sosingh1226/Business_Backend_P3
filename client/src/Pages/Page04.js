@@ -1,6 +1,7 @@
 import React from "react";
 
 import Mnav from "./../Component/mnav";
+import AnnounceContainer from '../Component/AnnounceContainer'
 
 const Pg04 = () => {
 	return (
@@ -14,6 +15,7 @@ const Pg04 = () => {
 			<p>
 				<a href=""> testing links look</a>
 			</p>
+			<AnnounceContainer/>
 		</div>
 	);
 }
