@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Mnav from "./../Component/mnav";
+import UserContext from "../Context/UserContext";
+import { useHistory } from "react-router-dom";
+
 
 function MMain() {
+	const { userData } = useContext(UserContext);
+	const history = useHistory();
+
+	useEffect(() => {
+		if (!userData.user) history.push("/");
+		
+	}, [userData.user, history]);
+
 		return (
 			<div>
 				<Mnav />
@@ -10,7 +21,7 @@ function MMain() {
 					Hello{" "}
 					<span class="" id="specialtxt">
 						{" "}
-						username{" "}
+						{userData.user ? userData.user.displayName : null}{" "}
 					</span>{" "}
 				</h2>
 				<p>
@@ -19,6 +30,7 @@ function MMain() {
 					task
 				</p>
         <h1>MANAGER PAGE</h1>
+		
 			</div>
 		);
 	}

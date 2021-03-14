@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Enav from "../Component/enav";
+import UserContext from "../Context/UserContext";
+import { useHistory } from "react-router-dom";
 
 function Emain() {
-		return (
-			<div>
-				<Enav />
-				<h2>
-					{" "}
-					Hello{" "}
-					<span class="" id="specialtxt">
-						{" "}
-						username{" "}
-					</span>{" "}
-				</h2>
-				<p>
-					{" "}
-					Welcome to our employee portal. Review the links above to select a
-					task
-				</p>
+	const { userData } = useContext(UserContext);
+	const history = useHistory();
 
-        <h1>EMPLOYEE PAGE</h1>
-			</div>
-		);
-		}
+	useEffect(() => {
+		if (!userData.user) history.push("/");
+		
+	}, [userData.user, history]);
+
+	return (
+		<div>
+			<Enav />
+			<h2>
+				{" "}
+				Hello{" "}
+				<span class="" id="specialtxt">
+					{" "}
+					{userData.user ? userData.user.displayName : null}{" "}
+				</span>{" "}
+			</h2>
+			<p>
+				{" "}
+				Welcome to our employee portal. Review the links above to select a task
+			</p>
+
+			<h1>EMPLOYEE PAGE</h1>
+		</div>
+	);
+}
 
 export default Emain;
 

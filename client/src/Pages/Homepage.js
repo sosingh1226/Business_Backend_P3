@@ -1,8 +1,5 @@
-import React, {useState, useEffect} from "react";
-import {useHistory} from 'react-router-dom'
-import Mmain from "../Pages/Mmain";
-import Emain from "../Pages/Emain";
-import UserContext from "../Context/UserContext";
+import React from "react";
+
 
 const Home = () => {
 
