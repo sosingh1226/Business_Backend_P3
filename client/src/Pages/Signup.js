@@ -36,7 +36,7 @@ const Signup = () => {
 				}
 			}
 		} catch (err) {
-			console.log("problem", err);
+			alert("problem", err);
 		}
 	};
 
@@ -57,7 +57,7 @@ const Signup = () => {
 						onChange={onChange}
 						type="text"
 						name="displayName"
-						placeholder="Display name"
+						placeholder="First & Last Name"
 					></input>
 					<br></br>
 
