@@ -29,8 +29,8 @@ const AnnounceContainer = () => {
 			const allPosts = await axios.get("/announce", {
 				headers: { "x-auth-token": localStorage.getItem("auth-token") },
 			});
-			setPosts(allPosts.data)
-			console.log(allPosts);
+			
+			setPosts(allPosts.data);
 		})();
 	}, []);
 
@@ -55,14 +55,28 @@ const AnnounceContainer = () => {
 				<button type="submit">Submit</button>
 			</form>
 
-			<div className="allPosts">
-				{posts.map((post, index) => (
-					<div key={index}>
-						<h3>{post.title}</h3>
-						<p>{post.text}</p>
-					</div>
-				))}
-			</div>
+			<table class="table">
+				<thead>
+					
+					<tr>
+						<th scope="col">Date</th>
+						<th scope="col">Subject</th>
+						<th scope="col">Message</th>
+						<th scope="col">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					{posts.map((post, index) => (
+						<tr key={index}>
+						<th scope="row">{post.createdAt}</th>
+						<td>{post.title}</td>
+						<td>{post.text}</td>
+						<td>@mdo</td>
+					</tr>
+					))}
+					
+				</tbody>
+			</table>
 		</div>
 	);
 };
