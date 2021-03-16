@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 const AnnounceContainer = () => {
@@ -23,13 +23,14 @@ const AnnounceContainer = () => {
 		} catch (err) {
 			console.log(err);
 		}
+		window.location.reload()
 	};
 	useEffect(() => {
 		(async () => {
 			const allPosts = await axios.get("/announce", {
 				headers: { "x-auth-token": localStorage.getItem("auth-token") },
 			});
-			
+
 			setPosts(allPosts.data);
 		})();
 	}, []);
@@ -57,7 +58,6 @@ const AnnounceContainer = () => {
 
 			<table class="table">
 				<thead>
-					
 					<tr>
 						<th scope="col">Date</th>
 						<th scope="col">Subject</th>
@@ -68,13 +68,12 @@ const AnnounceContainer = () => {
 				<tbody>
 					{posts.map((post, index) => (
 						<tr key={index}>
-						<th scope="row">{post.createdAt}</th>
-						<td>{post.title}</td>
-						<td>{post.text}</td>
-						<td>@mdo</td>
-					</tr>
+							<th scope="row">{post.createdAt}</th>
+							<td>{post.title}</td>
+							<td>{post.text}</td>
+							<td></td>
+						</tr>
 					))}
-					
 				</tbody>
 			</table>
 		</div>
