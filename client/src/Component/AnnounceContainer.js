@@ -31,7 +31,8 @@ const AnnounceContainer = () => {
 				headers: { "x-auth-token": localStorage.getItem("auth-token") },
 			});
 
-			setPosts(allPosts.data);
+			setPosts(allPosts.data.reverse());
+		
 		})();
 	}, []);
 
