@@ -13,9 +13,7 @@ module.exports = {
 
 	getAllPosts: async (req, res) => {
 		try {
-			const allPosts = await Announce.find({
-				userId: req.user,
-			});
+			const allPosts = await Announce.find();
 			console.log(allPosts);
 			res.json(allPosts);
 		} catch (err) {
