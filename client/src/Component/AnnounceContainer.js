@@ -86,7 +86,7 @@ const AnnounceContainer = () => {
 				<button type="submit">Submit</button>
 			</form>
 
-			<table class="table">
+			<table className="table">
 				<thead>
 					<tr>
 						<th scope="col">Date</th>
