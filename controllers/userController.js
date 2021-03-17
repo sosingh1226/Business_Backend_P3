@@ -9,10 +9,11 @@ module.exports = {
 			const { email, password, passwordCheck, displayName, role } = req.body;
 
 			// validation (need one conditional for email validation)
-			if (!email || !password || !passwordCheck || !displayName || !role)
+			if (!email || !password || !passwordCheck || !displayName || !role) 
 				return res
 					.status(400)
 					.json({ msg: "Not all fields have been entered!" });
+					
 
 			if (password.length < 8)
 				return res
@@ -28,6 +29,7 @@ module.exports = {
 				return res
 					.status(400)
 					.json({ msg: "An account with this email already exists!" });
+					
 
 			const salt = await bcrypt.genSalt();
 			const hashPw = await bcrypt.hash(password, salt);
@@ -44,6 +46,7 @@ module.exports = {
 			res.json(saveUser);
 		} catch (err) {
 			res.status(500).json({ error: err.message });
+			
 		}
 	},
 
