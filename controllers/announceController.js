@@ -21,4 +21,11 @@ module.exports = {
 			res.send("Can't view all post");
 		}
 	},
+	deletePost: async (req, res) => {
+		try {
+			res.json(await Announce.findByIdAndDelete(req.params._id));
+		} catch (err) {
+			res.send(err);
+		}
+	},
 };
