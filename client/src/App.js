@@ -6,10 +6,11 @@ import Login from "./Pages/Loginpage";
 import Signup from "./Pages/Signup";
 import Mmain from "./Pages/Mmain";
 import Emain from "./Pages/Emain";
-import Schedule from "./Pages/Schedulepage";
+import mSchedule from "./Pages/Mschedule";
 import Profile from "./Pages/Profilepage";
-import Pg03 from "./Pages/Page03";
-import Pg04 from "./Pages/Page04";
+import empPage from "./Pages/Emppage";
+import eAnnoucements from "./Pages/Eannoucements";
+import mAnnoucements from "./Pages/mannoucements";
 import UserContext from "./Context/UserContext";
 
 function App() {
@@ -51,9 +52,6 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				<Link to="/login" onClick={logout}>
-					Logout
-				</Link>
 
 				<UserContext.Provider value={{ userData, setUserData }}>
 					<Switch>
@@ -61,10 +59,11 @@ function App() {
 						<Route path="/signup" component={Signup} />
 						<Route path="/Mmain" component={Mmain} />
 						<Route path="/Emain" component={Emain} />
-						<Route path="/Schedulepage" component={Schedule} />
+						<Route path="/Mschedule" component={mSchedule} />
 						<Route path="/Profilepage" component={Profile} />
-						<Route path="/Page03" component={Pg03} />
-						<Route path="/Page04" component={Pg04} />
+						<Route path="/Emppage" component={empPage} />
+						<Route path="/Eannoucements" component={eAnnoucements} />
+						<Route path="/Mannoucements" component={mAnnoucements} />
 						<Route path="/" component={Login} />
 					</Switch>
 				</UserContext.Provider>
