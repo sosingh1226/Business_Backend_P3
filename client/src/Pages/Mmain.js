@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import Mnav from "./../Component/mnav";
 import UserContext from "../Context/UserContext";
 import { useHistory } from "react-router-dom";
+import Heading from "../Component/heading";
 
 
 function MMain() {
@@ -15,6 +16,7 @@ function MMain() {
 
 		return (
 			<div>
+				<Heading />
 				<Mnav />
 				<h2>
 					{" "}
