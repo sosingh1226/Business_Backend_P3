@@ -23,7 +23,8 @@ module.exports = {
 	},
 	deletePost: async (req, res) => {
 		try {
-			res.json(await Announce.findByIdAndDelete(req.params._id));
+			res.json(await Announce.findByIdAndDelete({_id: req.params.id}));
+			console.log(_id)
 		} catch (err) {
 			res.send(err);
 		}

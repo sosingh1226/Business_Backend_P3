@@ -19,7 +19,7 @@ function Mnav() {
 					</li>
 		
 					<li>
-						<Link to="/mannoucements">ANNOUCEMENTS</Link>
+						<Link to="/Mannoucements">ANNOUCEMENTS</Link>
 					</li>
 
 					<li><Link to="/Loginpage">LOGOUT</Link></li>

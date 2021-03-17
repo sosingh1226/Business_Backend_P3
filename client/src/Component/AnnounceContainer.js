@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import DeleteBtn from "./DeleteBtn/index";
 
 const AnnounceContainer = () => {
 	const [form, setForm] = useState({ title: "", text: "" });
@@ -23,10 +24,19 @@ const AnnounceContainer = () => {
 		} catch (err) {
 			console.log(err);
 		}
-		// window.location.reload();
+		window.location.reload();
 	};
 
-
+	const deletePost = async (id) => {
+		try {
+			await axios.delete(`/announce/${id}`, {
+				headers: { "x-auth-token": localStorage.getItem("auth-token") },
+			});
+		} catch (err) {
+			console.log(err);
+		}
+		window.location.reload();
+	};
 
 	useEffect(() => {
 		(async () => {
@@ -92,9 +102,9 @@ const AnnounceContainer = () => {
 							<td>{post.title}</td>
 							<td>{post.text}</td>
 							<td></td>
+							<DeleteBtn onClick={() => deletePost(post._id)} />
 						</tr>
 					))}
-					
 				</tbody>
 			</table>
 		</div>
