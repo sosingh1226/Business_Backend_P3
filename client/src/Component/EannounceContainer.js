@@ -61,14 +61,14 @@ const EannounceContainer = () => {
 							<th scope="row">{post.createdAt}</th>
 							<td>{post.title}</td>
 							<td>{post.text}</td>
-							<td></td>
-							<DeleteBtn
+							<td><DeleteBtn
 								style={{
 									opacity: disabled ? 0.25 : 1,
 									pointerEvents: disabled ? "none" : "initial",
 								}}
 								onClick={() => deletePost(post._id)}
-							/>
+							/></td>
+							
 						</tr>
 					))}
 				</tbody>

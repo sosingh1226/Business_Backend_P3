@@ -45,21 +45,21 @@ const AnnounceContainer = () => {
 			});
 
 			//NOTE: This changes the format of the date, need to implement this to createdAt
-			// const setTime =() => {
-			// 	let lastAddedTime = allPosts.data.length - 1;
-			// 	if (lastAddedTime >= 0) {
-			// 		let newTime = new Date(
-			// 			allPosts.data[lastAddedTime].createdAt
-			// 		).toLocaleDateString("en-US", {
-			// 			month: "short",
-			// 			day: "numeric",
-			// 			hour: "2-digit",
-			// 			minute: "2-digit",
-			// 			timeZone: "America/Los_Angeles",
-			// 		});
-			// 		console.log(newTime);
-			// 	}
-			// };
+			const setTime =() => {
+				let lastAddedTime = allPosts.data.length - 1;
+				if (lastAddedTime >= 0) {
+					let newTime = new Date(
+						allPosts.data[lastAddedTime].createdAt
+					).toLocaleDateString("en-US", {
+						month: "short",
+						day: "numeric",
+						hour: "2-digit",
+						minute: "2-digit",
+						timeZone: "America/Los_Angeles",
+					});
+					console.log(newTime);
+				}
+			};
 
 			setPosts(allPosts.data.reverse());
 		})();
@@ -67,7 +67,6 @@ const AnnounceContainer = () => {
 
 	return (
 		<div>
-			<h1>Hello from Announcement Container</h1>
 			<form onSubmit={submitPost}>
 				<input
 					type="text"
@@ -101,8 +100,8 @@ const AnnounceContainer = () => {
 							<th scope="row">{post.createdAt}</th>
 							<td>{post.title}</td>
 							<td>{post.text}</td>
-							<td></td>
-							<DeleteBtn onClick={() => deletePost(post._id)} />
+							<td><DeleteBtn onClick={() => deletePost(post._id)} /></td>
+							
 						</tr>
 					))}
 				</tbody>
