@@ -9,8 +9,8 @@ import Emain from "./Pages/Emain";
 import mSchedule from "./Pages/Mschedule";
 import Profile from "./Pages/Profilepage";
 import empPage from "./Pages/Emppage";
-import eAnnoucements from "./Pages/Eannoucements";
-import mAnnoucements from "./Pages/mannoucements";
+import EAnnoucements from "./Pages/Eannoucements";
+import MAnnoucements from "./Pages/Mannoucements";
 import UserContext from "./Context/UserContext";
 
 function App() {
@@ -61,8 +61,8 @@ function App() {
 						<Route path="/Mschedule" component={mSchedule} />
 						<Route path="/Profilepage" component={Profile} />
 						<Route path="/Emppage" component={empPage} />
-						<Route path="/Eannoucements" component={eAnnoucements} />
-						<Route path="/Mannoucements" component={mAnnoucements} />
+						<Route path="/Eannoucements" component={EAnnoucements} />
+						<Route path="/Mannoucements" component={MAnnoucements} />
 						<Route path="/" component={Login} />
 					</Switch>
 				</UserContext.Provider>
