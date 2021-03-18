@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Mnav() {
 	return (
 		<header>
-			<nav class="menubar">
+			<nav className="menubar">
 				<ul>
 					<li>
 						<Link to="/Mmain"> HOME</Link>
@@ -19,13 +19,13 @@ function Mnav() {
 					</li>
 		
 					<li>
-						<Link to="/mannoucements">ANNOUCEMENTS</Link>
+						<Link to="/Mannoucements">ANNOUCEMENTS</Link>
 					</li>
 
 					<li><Link to="/Loginpage">LOGOUT</Link></li>
 				</ul>
 				<br></br>
-				<span class="team">
+				<span className="team">
 					APPLICATION BROUGHT TO YOU BY THE SHANGHAI TEAM
 				</span>
 				<br></br>
