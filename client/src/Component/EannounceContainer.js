@@ -3,6 +3,7 @@ import axios from "axios";
 import DeleteBtn from "./DeleteBtn/index";
 
 const EannounceContainer = () => {
+	const [disabled, setDisabled] = useState(true);
 	const [posts, setPosts] = useState([]);
 
 	const deletePost = async (id) => {
@@ -62,6 +63,10 @@ const EannounceContainer = () => {
 							<td>{post.text}</td>
 							<td></td>
 							<DeleteBtn
+								style={{
+									opacity: disabled ? 0.25 : 1,
+									pointerEvents: disabled ? "none" : "initial",
+								}}
 								onClick={() => deletePost(post._id)}
 							/>
 						</tr>
