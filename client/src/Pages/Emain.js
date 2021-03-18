@@ -20,7 +20,7 @@ function Emain() {
 			<h2>
 				{" "}
 				Hello{" "}
-				<span class="" id="specialtxt">
+				<span className="" id="specialtxt">
 					{" "}
 					{userData.user ? userData.user.displayName : null}{" "}
 				</span>{" "}

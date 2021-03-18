@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import DeleteBtn from "./DeleteBtn/index";
 
 const AnnounceContainer = () => {
 	const [form, setForm] = useState({ title: "", text: "" });
@@ -23,16 +24,44 @@ const AnnounceContainer = () => {
 		} catch (err) {
 			console.log(err);
 		}
-		window.location.reload()
+		window.location.reload();
 	};
+
+	const deletePost = async (id) => {
+		try {
+			await axios.delete(`/announce/${id}`, {
+				headers: { "x-auth-token": localStorage.getItem("auth-token") },
+			});
+		} catch (err) {
+			console.log(err);
+		}
+		window.location.reload();
+	};
+
 	useEffect(() => {
 		(async () => {
 			const allPosts = await axios.get("/announce", {
 				headers: { "x-auth-token": localStorage.getItem("auth-token") },
 			});
 
+			//NOTE: This changes the format of the date, need to implement this to createdAt
+			// const setTime =() => {
+			// 	let lastAddedTime = allPosts.data.length - 1;
+			// 	if (lastAddedTime >= 0) {
+			// 		let newTime = new Date(
+			// 			allPosts.data[lastAddedTime].createdAt
+			// 		).toLocaleDateString("en-US", {
+			// 			month: "short",
+			// 			day: "numeric",
+			// 			hour: "2-digit",
+			// 			minute: "2-digit",
+			// 			timeZone: "America/Los_Angeles",
+			// 		});
+			// 		console.log(newTime);
+			// 	}
+			// };
+
 			setPosts(allPosts.data.reverse());
-		
 		})();
 	}, []);
 
@@ -57,7 +86,7 @@ const AnnounceContainer = () => {
 				<button type="submit">Submit</button>
 			</form>
 
-			<table class="table">
+			<table className="table">
 				<thead>
 					<tr>
 						<th scope="col">Date</th>
@@ -73,6 +102,7 @@ const AnnounceContainer = () => {
 							<td>{post.title}</td>
 							<td>{post.text}</td>
 							<td></td>
+							<DeleteBtn onClick={() => deletePost(post._id)} />
 						</tr>
 					))}
 				</tbody>
