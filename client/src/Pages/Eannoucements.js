@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Enav from "../Component/enav";
 import Heading from "../Component/heading";
+import EannounceContainer from "../Component/EannounceContainer";
 
 const Eannoucements = () => {
 	return (
@@ -11,7 +12,7 @@ const Eannoucements = () => {
 			Here we will post new annoucements
 			<br></br>
 			<h1>employee</h1>
-
+			<EannounceContainer />
 		</div>
 	);
 };
