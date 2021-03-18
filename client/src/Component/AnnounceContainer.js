@@ -45,7 +45,7 @@ const AnnounceContainer = () => {
 			});
 
 			//NOTE: This changes the format of the date, need to implement this to createdAt
-			const setTime =() => {
+			const setTime = () => {
 				let lastAddedTime = allPosts.data.length - 1;
 				if (lastAddedTime >= 0) {
 					let newTime = new Date(
@@ -100,8 +100,9 @@ const AnnounceContainer = () => {
 							<th scope="row">{post.createdAt}</th>
 							<td>{post.title}</td>
 							<td>{post.text}</td>
-							<td><DeleteBtn onClick={() => deletePost(post._id)} /></td>
-							
+							<td>
+								<DeleteBtn onClick={() => deletePost(post._id)} />
+							</td>
 						</tr>
 					))}
 				</tbody>
