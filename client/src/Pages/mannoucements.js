@@ -1,19 +1,20 @@
 import React from "react";
 import Mnav from "../Component/mnav";
 import Heading from "../Component/heading";
-import AnnounceContainer from '../Component/AnnounceContainer'
+import AnnounceContainer from "../Component/AnnounceContainer";
 
-const eAnnoucements = () => {
+const MAnnoucements = () => {
 	return (
 		<div>
-            <Heading />
+			<Heading />
 			<Mnav />
 			<h2>ANNOUNCEMENTS</h2>
-			Here we will post new annoucements 
+			Here we will post new annoucements
 			<br></br>
-			<AnnounceContainer/>
+			<h1>Manager</h1>
+			<AnnounceContainer />
 		</div>
 	);
-}
+};
 
-export default eAnnoucements;
+export default MAnnoucements;

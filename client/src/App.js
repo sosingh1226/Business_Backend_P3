@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./Pages/Loginpage";
 import Signup from "./Pages/Signup";
 import Mmain from "./Pages/Mmain";
@@ -9,8 +9,8 @@ import Emain from "./Pages/Emain";
 import mSchedule from "./Pages/Mschedule";
 import Profile from "./Pages/Profilepage";
 import empPage from "./Pages/Emppage";
-import eAnnoucements from "./Pages/Eannoucements";
-import mAnnoucements from "./Pages/mannoucements";
+import EAnnoucements from "./Pages/Eannoucements";
+import MAnnoucements from "./Pages/Mannoucements";
 import UserContext from "./Context/UserContext";
 
 function App() {
@@ -52,7 +52,6 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-
 				<UserContext.Provider value={{ userData, setUserData }}>
 					<Switch>
 						<Route path="/login" component={Login} />
@@ -62,8 +61,8 @@ function App() {
 						<Route path="/Mschedule" component={mSchedule} />
 						<Route path="/Profilepage" component={Profile} />
 						<Route path="/Emppage" component={empPage} />
-						<Route path="/Eannoucements" component={eAnnoucements} />
-						<Route path="/Mannoucements" component={mAnnoucements} />
+						<Route path="/Eannoucements" component={EAnnoucements} />
+						<Route path="/Mannoucements" component={MAnnoucements} />
 						<Route path="/" component={Login} />
 					</Switch>
 				</UserContext.Provider>
