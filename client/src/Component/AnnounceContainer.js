@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DeleteBtn from "./DeleteBtn/index";
-
+import moment from "moment";
 
 const AnnounceContainer = () => {
 	const [form, setForm] = useState({ title: "", text: "" });
@@ -81,6 +81,7 @@ const AnnounceContainer = () => {
 					{posts.map((post, index) => (
 						<tr key={index}>
 							<th scope="row">
+								{moment(post.createdAt).format("MM/DD/YYYY, h:mm:ss a")}
 							</th>
 							<td>{post.title}</td>
 							<td>{post.text}</td>
