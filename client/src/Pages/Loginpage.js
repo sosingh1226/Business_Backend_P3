@@ -29,6 +29,8 @@ const Login = () => {
 				role: loginRes.data.user.role,
 			});
 
+			console.log("Role:-", loginRes.data.user.role)
+
 			localStorage.setItem("auth-token", loginRes.data.token);
 			const userRole = loginRes.data.user.role;
 			if (userRole === "Manager") {
