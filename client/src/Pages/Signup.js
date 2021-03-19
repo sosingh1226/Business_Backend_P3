@@ -42,7 +42,7 @@ const Signup = () => {
 
 	return (
 		<div>
-			<span class="top">EMPLOYEE MANAGEMENT PORTAL</span>
+			<span className="top">EMPLOYEE MANAGEMENT PORTAL</span>
 			<p></p>
 			<span>
 				Welcome! Please sign in or signup to view contents

@@ -3,30 +3,10 @@ import axios from "axios";
 import DeleteBtn from "./DeleteBtn/index";
 import moment from "moment";
 
-const AnnounceContainer = () => {
-	const [form, setForm] = useState({ title: "", text: "" });
-
+const EannounceContainer = () => {
+	const [disabled, setDisabled] = useState(true);
 	const [posts, setPosts] = useState([]);
 
-	const onChange = (e) => {
-		setForm({ ...form, [e.target.name]: e.target.value });
-	};
-
-	const submitPost = async (e) => {
-		e.preventDefault();
-		const authToken = window.localStorage.getItem("auth-token");
-
-		try {
-			const newPost = await axios.post("/announce", form, {
-				headers: { "x-auth-token": authToken },
-			});
-
-			console.log(newPost);
-		} catch (err) {
-			console.log(err);
-		}
-		window.location.reload();
-	};
 	const deletePost = async (id) => {
 		try {
 			await axios.delete(`/announce/${id}`, {
@@ -50,24 +30,6 @@ const AnnounceContainer = () => {
 
 	return (
 		<div>
-			<form onSubmit={submitPost}>
-				<input
-					type="text"
-					name="title"
-					placeholder="Title"
-					onChange={onChange}
-				/>
-				<br />
-				<textarea
-					type="text"
-					name="text"
-					placeholder="Text"
-					onChange={onChange}
-				/>
-				<br />
-				<button type="submit">Submit</button>
-			</form>
-
 			<table className="table">
 				<thead>
 					<tr>
@@ -80,13 +42,17 @@ const AnnounceContainer = () => {
 				<tbody>
 					{posts.map((post, index) => (
 						<tr key={index}>
-							<th scope="row">
-								{moment(post.createdAt).format("MM/DD/YYYY, h:mm:ss a")}
-							</th>
+							<th scope="row">{moment(post.createdAt).format("MM/DD/YYYY, h:mm:ss a")}</th>
 							<td>{post.title}</td>
 							<td>{post.text}</td>
 							<td>
-								<DeleteBtn onClick={() => deletePost(post._id)} />
+								<DeleteBtn
+									style={{
+										opacity: disabled ? 0.25 : 1,
+										pointerEvents: disabled ? "none" : "initial",
+									}}
+									onClick={() => deletePost(post._id)}
+								/>
 							</td>
 						</tr>
 					))}
@@ -96,4 +62,4 @@ const AnnounceContainer = () => {
 	);
 };
 
-export default AnnounceContainer;
+export default EannounceContainer;

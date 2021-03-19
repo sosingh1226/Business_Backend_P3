@@ -29,6 +29,8 @@ const Login = () => {
 				role: loginRes.data.user.role,
 			});
 
+			console.log("Role:-", loginRes.data.user.role)
+
 			localStorage.setItem("auth-token", loginRes.data.token);
 			const userRole = loginRes.data.user.role;
 			if (userRole === "Manager") {
@@ -49,7 +51,7 @@ const Login = () => {
 
 	return (
 		<div>
-			<span class="top">EMPLOYEE MANAGEMENT PORTAL</span>
+			<span className="top">EMPLOYEE MANAGEMENT PORTAL</span>
 			<p></p>
 			<span>
 				Welcome! Please sign in or signup to view contents

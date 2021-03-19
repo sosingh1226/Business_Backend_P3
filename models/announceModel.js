@@ -9,7 +9,7 @@ const announceSchema = new mongoose.Schema(
 		text: { type: String, required: true },
 		userId: { type: String, required: true },
 	},
-	{ timestamps: true }
+	{ timestamps: { createdAt: true, updatedAt: false } }
 );
 
 module.exports = Announce = mongoose.model("announce", announceSchema);

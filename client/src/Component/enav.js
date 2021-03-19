@@ -6,7 +6,7 @@ function Enav() {
 	return (
 		<header>
 			
-			<nav class="menubar">
+			<nav className="menubar">
 				<ul id="nav">
 					<li><Link to="/Emain"> HOME</Link></li>
 					<li><Link to="/Emppage">SCHEDULE</Link></li>
