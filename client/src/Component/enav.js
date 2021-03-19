@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import icon from "../Img/774.png";
 
 function Enav() {
 	return (
 		<header>
-			
+			<span className="top">EMPLOYEE MANAGEMENT PORTAL</span>{" "}
+			<span className="coname"> - EMPLOYEE</span>
+			<img src={icon} alt="icon"></img>
 			<nav className="menubar">
 				<ul id="nav">
 					<li><Link to="/Emain"> HOME</Link></li>
@@ -13,6 +15,7 @@ function Enav() {
 					<li><Link to="/Eannoucements">ANNOUCEMENTS</Link></li>
 					<li><Link to="/Loginpage">LOGOUT</Link></li>
 				</ul>
+
 			</nav>
 		</header>
 	);

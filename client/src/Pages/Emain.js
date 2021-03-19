@@ -4,6 +4,8 @@ import UserContext from "../Context/UserContext";
 import { useHistory } from "react-router-dom";
 import Heading from "../Component/heading";
 
+
+
 function Emain() {
 	const { userData } = useContext(UserContext);
 	const history = useHistory();
@@ -15,7 +17,7 @@ function Emain() {
 
 	return (
 		<div>
-			<Heading />
+			{/* <Heading /> */}
 			<Enav />
 			<h2>
 				{" "}

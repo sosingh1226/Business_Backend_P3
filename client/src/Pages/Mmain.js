@@ -16,7 +16,6 @@ function MMain() {
 
 		return (
 			<div>
-				<Heading />
 				<Mnav />
 				<h2>
 					{" "}
