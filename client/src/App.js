@@ -10,7 +10,7 @@ import mSchedule from "./Pages/Mschedule";
 import Profile from "./Pages/Profilepage";
 import empPage from "./Pages/Emppage";
 import EAnnoucements from "./Pages/Eannoucements";
-import MAnnoucements from "./Pages/Mannoucements";
+import MAnnoucements from "./Pages/mannoucements";
 import UserContext from "./Context/UserContext";
 
 function App() {
