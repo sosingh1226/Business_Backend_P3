@@ -12,7 +12,7 @@ function Enav() {
 				<ul id="nav">
 					<li><Link to="/Emain"> HOME</Link></li>
 					<li><Link to="/Emppage">SCHEDULE</Link></li>
-					<li><Link to="/Eannoucements">ANNOUCEMENTS</Link></li>
+					<li><Link to="/Eannouncements">ANNOUNCEMENTS</Link></li>
 					<li><Link to="/Loginpage">LOGOUT</Link></li>
 				</ul>
 
