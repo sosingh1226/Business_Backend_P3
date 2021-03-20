@@ -1,6 +1,6 @@
 # HuddleRoom
 
-Welcome to HuddleRoom, a vertically-integrated application for self-service employee management. Administrators and employees alike can use this app to assign and view shifts, share messages, contact managers, and post announcements.
+Welcome to HuddleRoom, a vertically-integrated application for self-service employee management. Managers and employees alike can use this app to assign and view shifts, share messages, contact managers, and post announcements.
 
 ### Features:
 
@@ -21,34 +21,34 @@ Welcome to HuddleRoom, a vertically-integrated application for self-service empl
 - Updated UI as more functions and features are introduced.
 - Color Themes
 
-### Technologies
+### Technologies and Important Packages
 
 - React
 - MongoDB
+- Mongoose
 - Node.js
+- Nodemon
 
-Developed by Alexis Arando, Jacky Tong, James Gilley, Soumya Singh, Victor Tran
+# Development Team
 
-# Team Expertise
-
-- Jacky - Scrum master, organization
-- Soumya - Back End / Any
-- Alexis - Front/Back end
-- Victor - Front End emphasis (server.js)
-- James - Any, Backend emphasis
-
-- TBD. May change this to timeoff request or something else (Employees)
-
-ANNOUNCEMENTS
-
-- Post annoucements(Manager only)
-- Delete annoucements(Manager only)
-- View annoucements (Manager + Employee)
+- Jacky Tong (Scrum master, Wireframes)
+  - https://github.com/tongjac/
+- Soumya Singh (Front End Design, Module appearances)
+  - https://github.com/sosingh1226
+- Alexis Arando (Folder and file organization, Frontend Design)
+  - https://github.com/lex4736
+- Victor Tran (Authentication, Database, Verification Logic)
+  - https://github.com/Victortran415
+- James Gilley (Module appearances, Frontend/Backend communication)
+  - https://github.com/jamesgilley
 
 # Starting The Project Locally
 
-- `git clone` or `git pull` according to if you're starting your local from scratch or updating.
-- In the base directory, run `npm install` (It is helpful to temporarily disable antivirus since some team members have encountered it blocking crucial package files from downloading.)
-- `cd client/` and run `npm install` again in that sub-directory. There may be depreciation warnings but all dependencies are currently intact as of March 11, 2021.
-- Run `npm run dev` to start the development client.
-- Open `http://localhost:3000` in browser with console. Port 8080 is the "live" version and will not reflect changes yet.
+- `git clone` or `git pull` according to if you're starting your local from scratch or just updating.
+- In the base directory, run `npm install`. (It is helpful to temporarily disable antivirus since some team members have encountered it blocking crucial package files from downloading.)
+- `cd client/ & npm install` again in that sub-directory. There may be depreciation warnings but all dependencies are currently intact as of March 20, 2021.
+- `cd ..` to go back the base directory and run `npm build`. Wait for the build to complete, then run `npm run dev` to start the development client.
+- Open `http://localhost:3000` in browser with console or wait for it to launch automatically after building. Port 8080 is the "live" version and will not reflect changes yet.
+- `Ctrl + C` or `Commmand key + C` to end the development server.
+
+### Thanks for using our app!
