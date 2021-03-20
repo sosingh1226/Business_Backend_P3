@@ -33,13 +33,13 @@ Welcome to HuddleRoom, a vertically-integrated application for self-service empl
 
 - Jacky Tong (Scrum master, Wireframes)
   - https://github.com/tongjac/
-- Soumya Singh (Front End Design, Module appearances)
+- Soumya Singh (Backend functionality for employee profile, employee profile database and front end development for employee page)
   - https://github.com/sosingh1226
-- Alexis Arando (Folder and file organization, Frontend Design)
+- Alexis Arando (Front end design and development of react pages, navigation, components, front and backend functionality of the schedule page, schedule database)
   - https://github.com/lex4736
-- Victor Tran (Authentication, Database, Verification Logic)
+- Victor Tran (Backend functionality for user authentication, database for authentication, user verification and front end development for user authentication and announcements page)
   - https://github.com/Victortran415
-- James Gilley (Module appearances, Frontend/Backend communication)
+- James Gilley (Module appearances, Frontend/Backend communication, Update to semantic code)
   - https://github.com/jamesgilley
 
 # Starting The Project Locally
