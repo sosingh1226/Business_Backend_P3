@@ -3,7 +3,7 @@ import Enav from "../Component/enav";
 import Heading from "../Component/heading";
 import EannounceContainer from "../Component/EannounceContainer";
 
-const Eannoucements = () => {
+const EAnnouncements = () => {
 	return (
 		<div>
 			<Heading />
@@ -17,4 +17,4 @@ const Eannoucements = () => {
 	);
 };
 
-export default Eannoucements;
+export default EAnnouncements;
