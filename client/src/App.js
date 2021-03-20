@@ -62,7 +62,7 @@ function App() {
 						<Route path="/Mschedule" component={mSchedule} />
 						<Route path="/Profilepage" component={Profile} />
 						<Route path="/Emppage" component={empPage} />
-            <Route path="/Eannouncements" component={Eannouncements} />
+						<Route path="/Eannouncements" component={Eannouncements} />
 						<Route path="/Mannouncements" component={MAnnoucements} />
 						<Route path="/" component={Login} />
 					</Switch>
