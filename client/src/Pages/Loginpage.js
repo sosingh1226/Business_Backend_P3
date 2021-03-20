@@ -51,7 +51,7 @@ const Login = () => {
 
 	return (
 		<div>
-			<span className="top">EMPLOYEE MANAGEMENT PORTAL</span>
+			<span className="top">HUDDLE ROOM</span>
 			<p></p>
 			<span>
 				Welcome! Please sign in or signup to view contents
