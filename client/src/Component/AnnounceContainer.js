@@ -49,7 +49,7 @@ const AnnounceContainer = () => {
 	}, []);
 
 	return (
-		<div>
+		<div class="anncpg">
 			<form onSubmit={submitPost}>
 				<input
 					type="text"
@@ -57,7 +57,7 @@ const AnnounceContainer = () => {
 					placeholder="Title"
 					onChange={onChange}
 				/>
-				<br />
+				 <p></p>
 				<textarea
 					type="text"
 					name="text"
@@ -65,22 +65,22 @@ const AnnounceContainer = () => {
 					onChange={onChange}
 				/>
 				<br />
-				<button type="submit">Submit</button>
+				<button type="submit" class="btn02">Submit</button>
 			</form>
-
+             <p></p>
 			<table className="table">
-				<thead>
+				<thead className="thead1">
 					<tr>
-						<th scope="col">Date</th>
-						<th scope="col">Subject</th>
-						<th scope="col">Message</th>
-						<th scope="col">Name</th>
+						<th scope="col">DATE</th>
+						<th scope="col">SUBJECT</th>
+						<th scope="col">MESSAGE</th>
+						<th scope="col">NAME</th>
 					</tr>
 				</thead>
 				<tbody>
 					{posts.map((post, index) => (
 						<tr key={index}>
-							<th scope="row">
+							<th>
 								{moment(post.createdAt).format("MM/DD/YYYY, h:mm:ss a")}
 							</th>
 							<td>{post.title}</td>
