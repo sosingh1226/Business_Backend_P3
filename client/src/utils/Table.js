@@ -16,7 +16,7 @@ export default class Table extends Component {
         // const { data } = this.props;
 
         return (
-            <div className="container">
+            <div className="container02">
                 <input
                     type="text"
                     class="form-control"
@@ -29,7 +29,7 @@ export default class Table extends Component {
                             })
                         });
                     }}
-                />
+                /> <p></p>
 
                 <input
                     type="text"
@@ -44,15 +44,16 @@ export default class Table extends Component {
                         });
                     }}
                 />
-
-                <table className="table table-primary table-striped">
-                    <thead>
+                <p></p>
+                {/* <table className="table table-primary table-striped"> */}
+                <table className="table2">
+                    <thead className="thead2">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Cell</th>
-                            <th scope="col">ID</th>
+                            <th scope="col">PICTURE</th>
+                            <th scope="col">NAME</th>
+                            <th scope="col">EMAIL</th>
+                            <th scope="col">PHONE NUMBER</th>
+                            <th scope="col">ID REF</th>
                         </tr>
                     </thead>
                     <tbody>
