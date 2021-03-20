@@ -9,9 +9,8 @@ const Eannoucements = () => {
 			<Heading />
 			<Enav />
 			<h2>ANNOUNCEMENTS</h2>
-			Here we will post new annoucements
+			Here you will see current messages and udpates from the executive team
 			<br></br>
-			<h1>employee</h1>
 			<EannounceContainer />
 		</div>
 	);
