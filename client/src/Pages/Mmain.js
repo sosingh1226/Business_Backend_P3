@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import Mnav from "./../Component/mnav";
 import UserContext from "../Context/UserContext";
 import { useHistory } from "react-router-dom";
+import Heading from "../Component/heading";
 
 
 function MMain() {
@@ -19,7 +20,7 @@ function MMain() {
 				<h2>
 					{" "}
 					Hello{" "}
-					<span class="" id="specialtxt">
+					<span className="" id="specialtxt">
 						{" "}
 						{userData.user ? userData.user.displayName : null}{" "}
 					</span>{" "}

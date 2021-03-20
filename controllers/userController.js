@@ -2,6 +2,7 @@ const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
+const helper = require("../helpers/helper");
 
 module.exports = {
 	register: async (req, res) => {
@@ -59,6 +60,7 @@ module.exports = {
 			}
 
 			const user = await User.findOne({ email: email });
+			console.log("Role:-",helper.RoleChecker(user)) //When a user logs in to the app, the role gets logged in to the console
 
 			if (!user) {
 				res.status(400).json({ message: "User not defined" });
@@ -93,7 +95,6 @@ module.exports = {
 	getUser: async (req, res) => {
 		try {
 			const user = await User.findById(req.user);
-	
 
 			res.json({
 				displayName: user.displayName,
