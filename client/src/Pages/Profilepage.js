@@ -1,34 +1,28 @@
-import React from "react";
-import Mnav from './../Component/mnav';
-import Heading from "../Component/heading";
+import React, {Component} from "react";
+import Table from "../utils/Table";
+import Mnav from "../Component/mnav";
+import Heading from "../Component/heading"
 
  
-  function Profile() {
-    return (
-      <div>
-        <Heading />
-        <Mnav />
-
-
-        <h2>Profile</h2>
-        <p>Yes it worked :</p>
-        <ol>
-          <li>Nulla pulvinar diam</li>
-          <li>Facilisis bibendum</li>
-          <li>Vestibulum vulputate</li>
-          <li>Eget erat</li>
-          <li>Id porttitor</li>AAAAA
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-           do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-             ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-               sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
-          
-        </ol>
-      </div>
-    );
+export default class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null
+    };
   }
- 
-export default Profile;
+
+  componentDidMount() {
+    fetch('https://randomuser.me/api/?results=8').then((response) => response.json()).then((data) => {
+      this.setState({ data });
+    });
+  }
+
+  render() {
+    return <div className="home">
+      <Mnav />
+      <Heading />
+      {this.state.data && <Table employees={this.state.data} />}
+    </div>;
+  }
+}
