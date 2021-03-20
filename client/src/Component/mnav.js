@@ -7,7 +7,7 @@ function Mnav() {
 	return (
 		<header>
 
-<span className="top">EMPLOYEE MANAGEMENT PORTAL</span>{" "}
+<span className="top">HUDDLE ROOM</span>{" "}
 			<span className="coname"> - MANAGER</span>
 			<img src={icon} alt="icon"></img>
 
