@@ -2,12 +2,12 @@
 body { 
   background: rgb(240, 241, 243); 
   color: rgb(107, 101, 101);  
-  font-family: 'Abel', sans-serif;
-  padding: 20px;
+  font-family: 'Abel', cursive;
   margin: 0; 
+  padding-left: 25px;
 }
 h2, p, ul, li {
-  font-family: 'Abel', sans-serif;
+  font-family: 'Abel', cursive;
 }
 a:link {
 color: lightsteelblue;
@@ -27,33 +27,38 @@ h2
 
 a:active {
 color: lightsteelblue;
-/* }
-.content {
-  background-color: #090d00;
-  padding: 20px;
-}
-.content h2 {
-  padding: 0;
-  margin: 0;
-  color: black;
-}
-.content li {
-  margin-bottom: 10px; */
 }
 .top {
-  background-image: url(./Img/bgimg.png); 
-  background-repeat: repeat-y; 
-  text-shadow: 2px 2px 4px #000000;
-  color: white;
-  font-size: 40px;
-  padding: 20px;
+text-shadow: 2px 2px 4px #000000;
+color: white;
+font-size: 45px;
+font-family: 'Abel', cursive;
+border: black;
+width: 350px;
+padding: 0px;
 }
+.container01 {
+background-image: url(./Img/bgimg.png); 
+background-repeat: no-repeat; 
+width: 100vh;
+padding-bottom: 25px;
+margin-top: 0px;
+}
+.container02 {
+  width: 100vh;
+  text-align: center;
+  }
+
 .coname {
-  /* text-shadow: 2px 2px 4px #000000; */
   color: steelblue;
   font-size: 30px;
   padding: 5px;
   align-content: center;
+}
+.rolenm {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgb(102, 101, 101);
 }
 
 #specialtxt {
@@ -111,7 +116,51 @@ color: slategray;
 #form {
   padding:5px;
 }
+.anncpg{
+width: 800px;
+}
+.table{
+border:lightgray;
+padding-top: 25px;
+text-align: center;
+color: gray;
+}
+.table2{
+  border:lightgray;
+  padding-top: 25px;
+  width: 950px;
+  }
+.thead1{
+background-color: rgb(218, 222, 228);  
+font-weight: lighter;
+border: lightgray;
+border-style: solid;
+border-width: 1px;
+}
+.thead2{
+  background-color: rgb(218, 222, 228); 
+  font-weight: lighter;
+  border: lightgray;
+  border-style: solid;
+  border-width: 1px;
+  width: 900px;
+  text-align: center;
+  padding-bottom: 15PX;
+  }
+  .table-row {
+    border: lightgray;
+    border-style: solid;
+    border-width: 1px;
+  }
 
+btn02{
+  padding: 10px;
+  background-color: lightsteelblue;
+}
+.delete-btn {
+ align-content: center;
+color: lightgray
+}
 @media screen and (max-width:600px){
   .loginEmail {
     width:100%

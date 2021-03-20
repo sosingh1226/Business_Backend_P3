@@ -5,11 +5,12 @@ import icon from "../Img/774.png";
 
 function Mnav() {
 	return (
-		<header>
 
-<span className="top">HUDDLE ROOM</span>{" "}
-			<span className="coname"> - MANAGER</span>
-			<img src={icon} alt="icon"></img>
+<header class="container01">
+			<span className="top">HUDDLE ROOM</span>{" "}
+			<span className="coname">An Employee Management Portal 
+			<img src={icon} alt="icon"></img></span>
+			<span className="rolenm">MANAGER PAGE</span>
 
 			<nav className="menubar">
 				<ul>
