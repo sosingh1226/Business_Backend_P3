@@ -12,12 +12,10 @@ export default class Emputils extends Component {
     };
 
     render() {
-        const { classBtnVal, searchName, employees } = this.state;
-        // const { data } = this.props;
+        const {employees } = this.state;
 
         return (
             <div className="container02">
-                {/* <table className="table table-primary table-striped"> */}
                 <table className="table3">
                     <thead className="thead2">
                         <tr>

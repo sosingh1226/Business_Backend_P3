@@ -1,6 +1,4 @@
 import React from "react";
-import Mnav from "../Component/mnav";
-import Heading from "../Component/heading";
 import AnnounceContainer from "../Component/AnnounceContainer";
 
 const EmpNotes = () => {

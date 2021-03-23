@@ -1,6 +1,4 @@
-import React, { Component, useEffect, useContext } from "react";
-// import UserContext from "../Context/UserContext";
-// import { useHistory } from "react-router-dom";
+import React, { Component} from "react";
 import Enav from "../Component/enav";
 import Heading from "../Component/heading";
 import Emputils from "../utils/emputils";
@@ -15,15 +13,6 @@ export default class Profile extends Component {
     this.state = {
       data: null
     };
-		// function Emain() {
-		// 	const { userData } = useContext(UserContext);
-		// 	const history = useHistory();
-		
-		// 	useEffect(() => {
-		// 		if (!userData.user) history.push("/");
-				
-		// 	}, [userData.user, history]);
-  }
 
   componentDidMount() {
     fetch('https://randomuser.me/api/?results=1').then((response) => response.json()).then((data) => {
