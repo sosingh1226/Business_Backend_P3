@@ -29,14 +29,14 @@ const EannounceContainer = () => {
 	}, []);
 
 	return (
-		<div>
+		<div class="anncpg">
 			<table className="table">
-				<thead>
+				<thead className="thead1">
 					<tr>
-						<th scope="col">Date</th>
-						<th scope="col">Subject</th>
-						<th scope="col">Message</th>
-						<th scope="col">Name</th>
+						<th scope="col">DATE</th>
+						<th scope="col">SUBJECT</th>
+						<th scope="col">ANNOUCEMENT</th>
+						{/* <th scope="col">Name</th> */}
 					</tr>
 				</thead>
 				<tbody>
@@ -45,7 +45,7 @@ const EannounceContainer = () => {
 							<th scope="row">{moment(post.createdAt).format("MM/DD/YYYY, h:mm:ss a")}</th>
 							<td>{post.title}</td>
 							<td>{post.text}</td>
-							<td>
+							{/* <td>
 								<DeleteBtn
 									style={{
 										opacity: disabled ? 0.25 : 1,
@@ -53,7 +53,7 @@ const EannounceContainer = () => {
 									}}
 									onClick={() => deletePost(post._id)}
 								/>
-							</td>
+							</td> */}
 						</tr>
 					))}
 				</tbody>

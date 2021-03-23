@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import icon from "../Img/774.png";
 
 
 function Mnav() {
 	return (
-		<header>
+
+<header class="container01">
+			<span className="top">HUDDLE ROOM</span>{" "}
+			<span className="coname">An Employee Management Portal 
+			<img src={icon} alt="icon"></img></span>
+			<span className="rolenm">MANAGER PAGE</span>
+
 			<nav className="menubar">
 				<ul>
 					<li>
@@ -19,7 +25,7 @@ function Mnav() {
 					</li>
 		
 					<li>
-						<Link to="/Mannoucements">ANNOUCEMENTS</Link>
+						<Link to="/Mannouncements">ANNOUNCEMENTS</Link>
 					</li>
 
 					<li><Link to="/Loginpage">LOGOUT</Link></li>

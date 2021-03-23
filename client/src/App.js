@@ -9,9 +9,10 @@ import Emain from "./Pages/Emain";
 import mSchedule from "./Pages/Mschedule";
 import Profile from "./Pages/Profilepage";
 import empPage from "./Pages/Emppage";
-import EAnnoucements from "./Pages/Eannoucements";
-import MAnnoucements from "./Pages/Mannoucements";
+import EAnnoucements from "./Pages/Eannouncements";
+import MAnnoucements from "./Pages/Mannouncements";
 import UserContext from "./Context/UserContext";
+import Eannouncements from "./Pages/Eannouncements";
 
 function App() {
 	const [userData, setUserData] = useState({
@@ -61,8 +62,8 @@ function App() {
 						<Route path="/Mschedule" component={mSchedule} />
 						<Route path="/Profilepage" component={Profile} />
 						<Route path="/Emppage" component={empPage} />
-						<Route path="/Eannoucements" component={EAnnoucements} />
-						<Route path="/Mannoucements" component={MAnnoucements} />
+						<Route path="/Eannouncements" component={Eannouncements} />
+						<Route path="/Mannouncements" component={MAnnoucements} />
 						<Route path="/" component={Login} />
 					</Switch>
 				</UserContext.Provider>
