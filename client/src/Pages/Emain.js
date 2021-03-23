@@ -1,4 +1,6 @@
-import React, { Component} from "react";
+import React, { Component, useEffect, useContext } from "react";
+// import UserContext from "../Context/UserContext";
+// import { useHistory } from "react-router-dom";
 import Enav from "../Component/enav";
 import Heading from "../Component/heading";
 import Emputils from "../utils/emputils";
@@ -13,12 +15,15 @@ export default class Profile extends Component {
     this.state = {
       data: null
     };
+  }
 
   componentDidMount() {
     fetch('https://randomuser.me/api/?results=1').then((response) => response.json()).then((data) => {
       this.setState({ data });
     });
   }
+
+	
 
   render() {
     return <div className="home">
