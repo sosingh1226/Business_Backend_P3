@@ -61,7 +61,6 @@ const Signup = () => {
 					></input>
 					<br></br>
 
-					{/* NOTE: Change type to "password" when done testing, below */}
 					<input
 						onChange={onChange}
 						type="password"
@@ -74,7 +73,6 @@ const Signup = () => {
 						name="passwordCheck"
 						placeholder="passwordCheck"
 					></input>
-					{/* NOTE: Change type to password when done testing, above */}
 
 					<br />
 					<label>Select Job Title:</label>{" "}
