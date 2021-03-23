@@ -64,13 +64,13 @@ const Signup = () => {
 					{/* NOTE: Change type to "password" when done testing, below */}
 					<input
 						onChange={onChange}
-						type="text"
+						type="password"
 						name="password"
 						placeholder="password"
 					></input>{" "}
 					<input
 						onChange={onChange}
-						type="text"
+						type="password"
 						name="passwordCheck"
 						placeholder="passwordCheck"
 					></input>
