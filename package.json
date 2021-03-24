@@ -1,5 +1,5 @@
 {
-  "name": "Hudde Room",
+  "name": "HuddleRoom",
   "version": "1.0.0",
   "description": "Building a self-contained application that acts as a managerial backend. WHERE: There is User authentication for any login Managerial Managers may create or delete employee accounts Managers may create schedules Schedules consists only of Day of Week and a Shift (Currently only 9am-5pm per day)",
   "main": "server.js",
