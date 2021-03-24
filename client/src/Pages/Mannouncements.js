@@ -3,7 +3,7 @@ import Mnav from "../Component/mnav";
 import Heading from "../Component/heading";
 import AnnounceContainer from "../Component/AnnounceContainer";
 
-const MAnnoucements = () => {
+const MAnnouncements = () => {
 	return (
 		<div class="pagetitle">
 			<Heading />
@@ -16,4 +16,4 @@ const MAnnoucements = () => {
 	);
 };
 
-export default MAnnoucements;
+export default MAnnouncements;

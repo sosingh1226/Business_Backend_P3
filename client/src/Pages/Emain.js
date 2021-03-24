@@ -1,43 +1,44 @@
-import React, { useContext, useEffect } from "react";
+import React, { Component, useEffect, useContext } from "react";
+// import UserContext from "../Context/UserContext";
+// import { useHistory } from "react-router-dom";
 import Enav from "../Component/enav";
-import UserContext from "../Context/UserContext";
-import { useHistory } from "react-router-dom";
 import Heading from "../Component/heading";
+import Emputils from "../utils/emputils";
+import EmpNotes from "../Component/EmpNotes"
 
 
+// This is the main page that a regular employee will see after logging in
+ 
+export default class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null
+    };
+  }
 
-function Emain() {
-	const { userData } = useContext(UserContext);
-	const history = useHistory();
+  componentDidMount() {
+    fetch('https://randomuser.me/api/?results=1').then((response) => response.json()).then((data) => {
+      this.setState({ data });
+    });
+  }
 
-	useEffect(() => {
-		if (!userData.user) history.push("/");
-		
-	}, [userData.user, history]);
+	
 
-	return (
-		<div>
-			{/* <Heading /> */}
-			<Enav />
+  render() {
+    return <div className="home">
+      <Enav />
+      <Heading />
 			<p></p>
-			<h2>
-				{" "}
-				Hello{" "}
-				<span className="" id="specialtxt">
-					{" "}
-					{userData.user ? userData.user.displayName : null}{" "}
-				</span>{" "}
-			</h2>
 			<p>
 				{" "}
 				Welcome to our employee portal. Review the links above to select a task
 			</p>
 
 			<h1>EMPLOYEE PAGE</h1>
-		</div>
-	);
+      {this.state.data && <Emputils employees={this.state.data} />}
+			<br></br>
+			<EmpNotes />
+    </div>;
+  }
 }
-
-export default Emain;
-
-// This is the main page that a regular employee will see after logging in
