@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import DeleteBtn from "./DeleteBtn/index";
 import moment from "moment";
 
 const EannounceContainer = () => {
@@ -45,15 +44,7 @@ const EannounceContainer = () => {
 							<th scope="row">{moment(post.createdAt).format("MM/DD/YYYY, h:mm:ss a")}</th>
 							<td>{post.title}</td>
 							<td>{post.text}</td>
-							{/* <td>
-								<DeleteBtn
-									style={{
-										opacity: disabled ? 0.25 : 1,
-										pointerEvents: disabled ? "none" : "initial",
-									}}
-									onClick={() => deletePost(post._id)}
-								/>
-							</td> */}
+							
 						</tr>
 					))}
 				</tbody>
