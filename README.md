@@ -1,6 +1,8 @@
 # HuddleRoom
 
-Welcome to HuddleRoom, a vertically-integrated application for self-service employee management. Managers and employees alike can use this app to assign and view shifts, share messages, contact managers, and post announcements.
+Welcome to HuddleRoom, a vertically-integrated application for self-service employee management. Managers and employees alike can use this app to assign and view shifts, share messages, contact managers, and post announcements. Please visit us at our live site!
+
+[Live Deployment Link](http://huddleroom.herokuapp.com/)
 
 ### Features:
 
