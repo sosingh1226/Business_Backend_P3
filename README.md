@@ -33,7 +33,7 @@ Welcome to HuddleRoom, a vertically-integrated application for self-service empl
 
 # Development Team
 
-- Jacky Tong (Scrum master, Wireframes)
+- Jacky Tong (Scrum master, Wireframes, Deployment, Presentation)
   - https://github.com/tongjac/
 - Soumya Singh (Backend functionality for employee profile, employee profile database and front end development for employee page)
   - https://github.com/sosingh1226
