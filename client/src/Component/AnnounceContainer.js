@@ -65,7 +65,7 @@ const AnnounceContainer = () => {
 					onChange={onChange}
 				/>
 				<br />
-				<button type="submit" class="btn02">Submit</button>
+				<button type="submit">Submit</button>
 			</form>
              <p></p>
 			<table className="table">
