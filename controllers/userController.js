@@ -85,7 +85,8 @@ module.exports = {
 				user: {
 					id: user._id,
 					displayName: user.displayName,
-					role: user.role
+					role: user.role,
+					confirmed: user.confirmed
 				},
 			});
 		} catch (err) {
