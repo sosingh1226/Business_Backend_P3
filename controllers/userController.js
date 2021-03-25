@@ -65,6 +65,14 @@ module.exports = {
 				text: `Click to confirm http://localhost:8080/confirm_token/${confirmToken.token}`
 			}
 
+			transporter.sendMail(mailOption, (error, info) => {
+				if (error) {
+					console.log(error)
+				} else {
+					console.log(`Email was sent with: http://localhost:8080/confirm_token/${confirmToken.token}`)
+				}
+			})
+
 			await confirmToken.save();
 			const saveUser = await createNewUser.save();
 
