@@ -2,7 +2,6 @@ import React, { Component, useEffect, useContext } from "react";
 import UserContext from "../Context/UserContext";
 import { useHistory } from "react-router-dom";
 import Enav from "../Component/enav";
-import Heading from "../Component/heading";
 import EmpNotes from "../Component/EmpNotes"
 import Profile from "../Component/empcover";
 import pic4 from "../Img/em.png";
@@ -22,7 +21,6 @@ function Emain() {
 		return (
 			<div>
       <Enav />
-      <Heading />
       <h2>
 					
 					{" "}
