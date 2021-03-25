@@ -12,8 +12,9 @@ const userSchema = new mongoose.Schema({
 	role: {
 		type: String,
 		enum: ["Manager", "Employee"],
-		default: 'Employee'
+		default: "Employee",
 	},
+	confirmed: { type: Boolean, default: false },
 });
 
 module.exports = User = mongoose.model("user", userSchema);
