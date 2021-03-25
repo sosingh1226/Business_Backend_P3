@@ -53,23 +53,23 @@ module.exports = {
 			const transporter = nodemailer.createTransport({
 				service: "gmail",
 				auth: {
-					user: "HuddleRoom@gmail.com",
-					pass: process.env.EPASS,
+					user: process.env.EMAIL,
+					pass: process.env.PASS,
 				},
 			});
 
 			const mailOption = {
-				from: "HuddleRoom@gmail.com",
+				from: process.env.EMAIL,
 				to: createNewUser.email,
 				subject: "Thank you for signing up with Huddle Room!",
-				text: `Click to confirm http://localhost:8080/confirm_token/${confirmToken.token}`
+				text: `Click to confirm http://localhost:3000/confirm_token/${confirmToken.token}`
 			}
 
 			transporter.sendMail(mailOption, (error, info) => {
 				if (error) {
 					console.log(error)
 				} else {
-					console.log(`Email was sent with: http://localhost:8080/confirm_token/${confirmToken.token}`)
+					console.log(`Email was sent with: http://localhost:3000/confirm_token/${confirmToken.token}`)
 				}
 			})
 
