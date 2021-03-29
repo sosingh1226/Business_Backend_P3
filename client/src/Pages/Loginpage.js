@@ -5,7 +5,6 @@ import Axios from "axios";
 import { Link } from "react-router-dom";
 import pic2 from "../Img/toppic.png";
 
-
 const Login = () => {
 	const { userData, setUserData } = useContext(UserContext);
 	const [form, setForm] = useState({});
@@ -19,26 +18,26 @@ const Login = () => {
 		e.preventDefault();
 
 		try {
-			const loginRes = await Axios.post("/login", {
+			const loginRes = await Axios.post("/users/login", {
 				email: form.email,
 				password: form.password,
 			});
-
-			setUserData({
-				token: loginRes.data.token,
-				user: loginRes.data.user,
-				role: loginRes.data.user.role,
-			});
-
-			console.log("Role:-", loginRes.data.user.role)
-
-			localStorage.setItem("auth-token", loginRes.data.token);
-			const userRole = loginRes.data.user.role;
-			if (userRole === "Manager") {
-				history.push("/Mmain");
+			if (!loginRes.data.user.confirmed) {
+				history.push("/confirm");
 			} else {
-				if (userRole === "Employee") {
-					history.push("/Emain");
+				setUserData({
+					token: loginRes.data.token,
+					user: loginRes.data.user,
+					role: loginRes.data.user.role,
+				});
+				localStorage.setItem("auth-token", loginRes.data.token);
+				const userRole = loginRes.data.user.role;
+				if (userRole === "Manager") {
+					history.push("/Mmain");
+				} else {
+					if (userRole === "Employee") {
+						history.push("/Emain");
+					}
 				}
 			}
 		} catch (err) {
@@ -51,30 +50,47 @@ const Login = () => {
 	}, [userData.user, history]);
 
 	return (
-		
-			<div class="container03">
-			<span className="top02">HUDDLE ROOM</span><br></br>
+		<div class="container03">
+			<span className="top02">HUDDLE ROOM</span>
+			<br></br>
 			<span className="coname">An Employee Management Portal </span>
 			<br></br>
-		   <img class="img01"  src={pic2} alt="pic"></img>
-           <br></br>
-				Welcome! Please sign in or signup to view contents
-				<br></br>
-				<div class="formcont">
-				<form id="form" onSubmit={submit}> <br></br>
+			<img class="img01" src={pic2} alt="pic"></img>
+			<br></br>
+			Welcome! Please sign in or signup to view contents
+			<br></br>
+			<div class="formcont">
+				<form id="form" onSubmit={submit}>
+					{" "}
+					<br></br>
 					<label htmlFor="email">Email: </label>
-					<input  type="text" className="loginEmail" name="email" class="input" onChange={onChange} />
-					<br /><p></p>
-					<label htmlFor="password">Password: </label><br></br>
-					<input type="password" name="password" className="loginPassword" input class="input" onChange={onChange} />
-					<br /><p></p>
+					<input
+						type="text"
+						className="loginEmail"
+						name="email"
+						class="input"
+						onChange={onChange}
+					/>
+					<br />
+					<p></p>
+					<label htmlFor="password">Password: </label>
+					<br></br>
+					<input
+						type="password"
+						name="password"
+						className="loginPassword"
+						input
+						class="input"
+						onChange={onChange}
+					/>
+					<br />
+					<p></p>
 					<input class="btn02" type="submit" value="Login" />
 				</form>
-				</div>
-				<br></br>
-				Don't have an account? <Link to="/Signup"> Click here to Sign Up!</Link>
-			  <br></br>
-			 
+			</div>
+			<br></br>
+			Don't have an account? <Link to="/Signup"> Click here to Sign Up!</Link>
+			<br></br>
 		</div>
 	);
 };

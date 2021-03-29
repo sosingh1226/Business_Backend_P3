@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const path = require("path");
-require("dotenv").config();
+// require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === "production")
 
 // Custom Routes
 
-app.use("/", require("./routes/userRoutes"));
+app.use("/users", require("./routes/userRoutes"));
 app.use("/announce", require("./routes/announceRoutes"));
 
 app.get("*", (req, res) => {

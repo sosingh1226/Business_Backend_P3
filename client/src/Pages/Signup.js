@@ -5,7 +5,6 @@ import Axios from "axios";
 import pic2 from "../Img/toppic2.png";
 
 const Signup = () => {
-	const { setUserData } = useContext(UserContext);
 	const [form, setForm] = useState();
 	const history = useHistory();
 
@@ -16,54 +15,36 @@ const Signup = () => {
 	const submit = async (e) => {
 		e.preventDefault();
 		try {
-			await Axios.post("/register", form);
-			const loginRes = await Axios.post("/login", {
-				email: form.email,
-				password: form.password,
-			});
-			console.log(loginRes);
-			setUserData({
-				token: loginRes.data.token,
-				user: loginRes.data.user,
-			});
-
-			localStorage.setItem("auth-token", loginRes.data.token);
-			const userRole = loginRes.data.user.role;
-			if (userRole === "Manager") {
-				history.push("/Mmain");
-			} else {
-				if (userRole === "Employee") {
-					history.push("/Emain");
-				}
-			}
+			await Axios.post("/users/register", form);
+			history.push("/login");
 		} catch (err) {
 			alert("problem", err);
 		}
 	};
 
 	return (
-	
-
-           <div class="container03">
-			<span className="top02">HUDDLE ROOM</span><br></br>
+		<div class="container03">
+			<span className="top02">HUDDLE ROOM</span>
+			<br></br>
 			<span className="coname">An Employee Management Portal </span>
 			<br></br>
-		   <img class="img01"  src={pic2} alt="pic"></img>
-           <p></p>
-		   <h2>Create an Account </h2>
-				Welcome! Please input your information below to create an account
-				<br></br>
-				<div class="formcont">
+			<img class="img01" src={pic2} alt="pic"></img>
+			<p></p>
+			<h2>Create an Account </h2>
+			Welcome! Please input your information below to create an account
+			<br></br>
+			<div class="formcont">
 				<form onSubmit={submit}>
-				<label htmlFor="email">Email: </label>
+					<label htmlFor="email">Email: </label>
 					<input
 						onChange={onChange}
 						type="text"
 						name="email"
 						placeholder="email"
 						class="input"
-					></input>{" "} <p></p>
-					<label htmlFor="displayName">Fullname:  </label>
+					></input>{" "}
+					<p></p>
+					<label htmlFor="displayName">Fullname: </label>
 					<input
 						onChange={onChange}
 						type="text"
@@ -72,7 +53,7 @@ const Signup = () => {
 						class="input"
 					></input>
 					<p></p>
-					<label htmlFor="password">Password:  </label>
+					<label htmlFor="password">Password: </label>
 					<input
 						onChange={onChange}
 						type="password"
@@ -89,7 +70,7 @@ const Signup = () => {
 						placeholder="passwordCheck"
 						class="input"
 					></input>
-                     <p></p>
+					<p></p>
 					<br />
 					<label>Select Job Title:</label>{" "}
 					<select name="role" onChange={onChange} placeholder="Job Title">
@@ -99,10 +80,10 @@ const Signup = () => {
 					</select>
 					<p></p>
 					<input class="btn02" type="submit"></input>
-				</form></div>
-				<br></br>
-				Already have an account? <Link to="/login"> Click here to Login!</Link>
-			
+				</form>
+			</div>
+			<br></br>
+			Already have an account? <Link to="/login"> Click here to Login!</Link>
 		</div>
 	);
 };

@@ -1,8 +1,11 @@
 const User = require("../models/userModel");
+const Confirm = require("../models/confirmModel");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const helper = require("../helpers/helper");
+const crypto = require("crypto");
+const nodemailer = require("nodemailer");
 
 module.exports = {
 	register: async (req, res) => {
@@ -10,11 +13,10 @@ module.exports = {
 			const { email, password, passwordCheck, displayName, role } = req.body;
 
 			// validation (need one conditional for email validation)
-			if (!email || !password || !passwordCheck || !displayName || !role) 
+			if (!email || !password || !passwordCheck || !displayName || !role)
 				return res
 					.status(400)
 					.json({ msg: "Not all fields have been entered!" });
-					
 
 			if (password.length < 8)
 				return res
@@ -30,7 +32,6 @@ module.exports = {
 				return res
 					.status(400)
 					.json({ msg: "An account with this email already exists!" });
-					
 
 			const salt = await bcrypt.genSalt();
 			const hashPw = await bcrypt.hash(password, salt);
@@ -39,15 +40,45 @@ module.exports = {
 				email,
 				password: hashPw,
 				displayName,
-				role
+				role,
 			});
 
+			//begin confirmation here
+			const confirmToken = new Confirm({
+				token: crypto.randomBytes(10).toString("hex"),
+				userId: createNewUser._id,
+			});
+			console.log(confirmToken);
+
+			const transporter = nodemailer.createTransport({
+				service: "gmail",
+				auth: {
+					user: process.env.EMAIL,
+					pass: process.env.PASS,
+				},
+			});
+
+			const mailOption = {
+				from: process.env.EMAIL,
+				to: createNewUser.email,
+				subject: "Thank you for signing up with Huddle Room!",
+				text: `Click to confirm http://localhost:3000/confirm_token/${confirmToken.token}`
+			}
+
+			transporter.sendMail(mailOption, (error, info) => {
+				if (error) {
+					console.log(error)
+				} else {
+					console.log(`Email was sent with: http://localhost:3000/confirm_token/${confirmToken.token}`)
+				}
+			})
+
+			await confirmToken.save();
 			const saveUser = await createNewUser.save();
 
 			res.json(saveUser);
 		} catch (err) {
 			res.status(500).json({ error: err.message });
-			
 		}
 	},
 
@@ -60,7 +91,7 @@ module.exports = {
 			}
 
 			const user = await User.findOne({ email: email });
-			console.log("Role:-",helper.RoleChecker(user)) //When a user logs in to the app, the role gets logged in to the console
+			console.log("Role:-", helper.RoleChecker(user)); //When a user logs in to the app, the role gets logged in to the console
 
 			if (!user) {
 				res.status(400).json({ message: "User not defined" });
@@ -74,7 +105,7 @@ module.exports = {
 			const token = jwt.sign(
 				{
 					id: user._id,
-					role: user.role
+					role: user.role,
 				},
 				process.env.JWT_SECRET,
 				{ expiresIn: "2h" }
@@ -85,7 +116,8 @@ module.exports = {
 				user: {
 					id: user._id,
 					displayName: user.displayName,
-					role: user.role
+					role: user.role,
+					confirmed: user.confirmed,
 				},
 			});
 		} catch (err) {
@@ -99,7 +131,7 @@ module.exports = {
 			res.json({
 				displayName: user.displayName,
 				id: user._id,
-				role: user.role
+				role: user.role,
 			});
 		} catch (err) {
 			res.send(err.response);

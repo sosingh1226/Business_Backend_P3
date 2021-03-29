@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import Table from "../utils/Table";
 import Mnav from "../Component/mnav";
-import Heading from "../Component/heading"
 
  
 export default class Profile extends Component {
@@ -21,7 +20,6 @@ export default class Profile extends Component {
   render() {
     return <div className="home">
       <Mnav />
-      <Heading />
       <h2> EMPLOYEE PROFILE DIRECTORY </h2>
 			<p>This is where you can lookup, change or add employee information </p>
 			<br></br>

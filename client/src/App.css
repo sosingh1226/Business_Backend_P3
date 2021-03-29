@@ -40,7 +40,7 @@ padding: 0px;
 .top02 {
   text-shadow: 2px 2px 4px #000000;
   color: white;
-  font-size: 45px;
+  font-size: 2.5vw;
   font-family: 'Abel', cursive;
   border: black;
   width: 700px;
@@ -64,9 +64,10 @@ margin-top: 0px;
 .container03 {
     align-content: center;
     text-align: center;
-      padding-bottom: 10px;
-      margin-top: 0px;
-      width: 100%;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    width: 100%;
+    height: auto;
  }
 .formcont {
    border: solid;
@@ -83,7 +84,7 @@ margin-top: 0px;
 
 .coname {
   color: steelblue;
-  font-size: 30px;
+  font-size: 1.5vw;
   padding: 5px;
   align-content: center;
 }
@@ -197,7 +198,6 @@ padding: 0px;
     border-style: solid;
     border-width: 1px;
   }
-
 .btn02{
   background-color: rgb(238, 235, 235);
   text-align: center;
@@ -212,6 +212,7 @@ color: gray;
 @media screen and (max-width:600px){
   .loginEmail {
     width:100%
+    
   }
   .loginPassword {
     width:100%
